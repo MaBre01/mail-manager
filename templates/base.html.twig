@@ -27,6 +27,13 @@
 
                     {% include '_navbar.html.twig' %}
 
+                    <nav aria-label="breadcrumb mb-0">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            {% block breadcrumb %}{% endblock %}
+                        </ol>
+                    </nav>
+
                     <div id="page-content" class="container-fluid position-relative pt-4">
 
                         {% include '_flash-message.html.twig' %}

@@ -1,0 +1,14 @@
+<div class="sr-only">
+    <div class="container">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+
+                <div class="alert alert-{{ label }} js-flash-message" data-label="{{ label }}" data-message="{{ message }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+</div>

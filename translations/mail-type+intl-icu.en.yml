@@ -1,0 +1,15 @@
+mail_type:
+  name: 'Mail types'
+  add: 'Add new mail type'
+  edit: 'Edit mail type'
+
+  entity:
+    name: 'Name'
+    display_order: 'Order'
+  form:
+    name: 'Name :'
+    display_order: 'Order :'
+
+  added: 'Mail type added'
+  edited: 'Mail type edited'
+  deleted: 'Mail type deleted'

@@ -1,1 +1,11 @@
 home: 'Home'
+
+settings: 'Settings'
+
+add: 'Add'
+save: 'Save'
+edit: 'Edit'
+
+error:
+  save: 'Error during save'
+  delete: 'Error during removal'

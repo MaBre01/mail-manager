@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="#">{% trans %}settings{% endtrans %}</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('mail-type_list') }}">{% trans from 'mail-type' %}mail_type.name{% endtrans %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans %}edit{% endtrans %} : {{ mailType.name }}</li>
+{% endblock %}
+
+{% block pageTitle %}
+    <h1 class="h3 mb-0 text-dark">{% trans from 'mail-type' %}mail_type.edit{% endtrans %}</h1>
+{% endblock %}
+
+{% block body %}
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-xl-4">
+            {{ form_start(editForm) }}
+
+            <div class="form-group">
+                {{ form_label(editForm.name) }}
+                {{ form_widget(editForm.name, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(editForm.displayOrder) }}
+                {{ form_widget(editForm.displayOrder, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">{% trans %}save{% endtrans %}</button>
+            </div>
+
+            {{ form_end(editForm) }}
+        </div>
+    </div>
+
+{% endblock %}

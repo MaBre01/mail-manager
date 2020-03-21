@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="#">{% trans %}settings{% endtrans %}</a></li>
+    <li class="breadcrumb-item active">{% trans from 'mail-type' %}mail_type.name{% endtrans %}</li>
+{% endblock %}
+
+{% block pageTitle %}
+    <h1 class="mb-0 h3 text-dark">{% trans from 'mail-type' %}mail_type.name{% endtrans %}</h1>
+{% endblock %}
+
+{% block body %}
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>{% trans from 'mail-type' %}mail_type.entity.name{% endtrans %}</th>
+                    <th class="text-center">{% trans from 'mail-type' %}mail_type.entity.display_order{% endtrans %}</th>
+                    <th class="text-right text-nowrap">
+                        <a href="{{ url('mail-type_add') }}" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-plus"></i><span class="ml-1">{% trans %}add{% endtrans %}</span>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mailType in mailTypes %}
+                    <tr>
+                        <td>{{ mailType.name }}</td>
+                        <td class="text-center">{{ mailType.displayOrder }}</td>
+                        <td class="text-right text-nowrap">
+                            <a href="{{ url('mail-type_edit', {id: mailType.id}) }}" class="btn btn-outline-dark btn-sm">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
+
+                            <a href="{{ url('mail-type_delete', {id: mailType.id}) }}" class="btn btn-outline-danger btn-sm">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">{% trans %}nothing_to_display{% endtrans %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

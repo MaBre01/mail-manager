@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item">{% trans from 'mail-type' %}mail_type.name{% endtrans %}</li>
+    <li class="breadcrumb-item active">{{ mailType.name }}</li>
+{% endblock %}
+
+{% block pageTitle %}
+    <h1 class="h3 mb-0 text-dark">{{ mailType.name }}</h1>
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}
